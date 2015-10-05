@@ -19,7 +19,7 @@
 					<h5 class="header col s12 light">My Personal Portfolio at its BEST!</h5>
 				</div>
 				<div class="row center">
-					<a href="" class="btn-large waves-effect waves-light orange" onclick="hahaha()">
+					<a class="btn-large waves-effect waves-light orange" onclick="hahaha();"  href="javascript:void(0);">
 						Subscribe Now!
 					</a>
 				</div>
@@ -36,12 +36,11 @@
 					title: "Subscribe :)!",
 					text: "Write your email to connect with Me:",
 					type: "input",
-					inputType: 'email',
 					showCancelButton: true,
 					closeOnConfirm: false,
+					showLoaderOnConfirm: true,
 					animation: "slide-from-top",
-					inputPlaceholder: "Your Email Address Here!",
-					showLoaderOnConfirm: true
+					inputPlaceholder: "Your Email Address Here!"
 				},
 				function(inputValue){
 					if (inputValue === false) return false;
