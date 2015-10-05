@@ -35,11 +35,13 @@
 			swal({
 					title: "Subscribe :)!",
 					text: "Write your email to connect with Me:",
-					type: "email",
+					type: "text",
+					inputType: 'email',
 					showCancelButton: true,
 					closeOnConfirm: false,
 					animation: "slide-from-top",
-					inputPlaceholder: "Your Email Address Here!"
+					inputPlaceholder: "Your Email Address Here!",
+					showLoaderOnConfirm: true
 				},
 				function(inputValue){
 					if (inputValue === false) return false;
