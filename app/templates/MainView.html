@@ -19,7 +19,7 @@
 					<h5 class="header col s12 light">My Personal Portfolio at its BEST!</h5>
 				</div>
 				<div class="row center">
-					<a href="" class="btn-large waves-effect waves-light orange">
+					<a href="" class="btn-large waves-effect waves-light orange" onclick="hahaha()">
 						Subscribe Now!
 					</a>
 				</div>
@@ -30,5 +30,28 @@
 		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
 		<script type="text/javascript" src="{% static "js/sweetalert.min.js" %}"></script>
+		<script type="text/javascript">
+		function hahaha(){
+			swal({
+					title: "Subscribe :)!",
+					text: "Write your email to connect with Me:",
+					type: "email",
+					showCancelButton: true,
+					closeOnConfirm: false,
+					animation: "slide-from-top",
+					inputPlaceholder: "Your Email Address Here!"
+				},
+				function(inputValue){
+					if (inputValue === false) return false;
+
+					if (inputValue === "") {
+						swal.showInputError("Your Email is Needed!");
+					return false
+					}
+
+					swal("Nice!", "I'll be in touch with you very soon! :)", "success");
+				});
+		}
+		</script>
     </body>
   </html>
