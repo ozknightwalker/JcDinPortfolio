@@ -39,6 +39,7 @@
 					inputType: "email",
 					showCancelButton: true,
 					closeOnConfirm: false,
+					showLoaderOnConfirm: true,
 					animation: "slide-from-top",
 					inputPlaceholder: "Your Email Address Here!"
 				},
@@ -49,8 +50,9 @@
 						swal.showInputError("Your Email is Needed!");
 					return false
 					}
-
-					swal("Nice!", "I'll be in touch with you very soon! :)", "success");
+					setTimeout(function(){
+						swal("Nice!", "I'll be in touch with you very soon! :)", "success");
+					}, 2000);
 				});
 		}
 		</script>
