@@ -1,26 +1,13 @@
-(function(){
-    "use strict";
-    angular.module(
-        "app",[
-            "ngAnimate",
-            "ui.router",
-            "core"
-        ]
-    )
-}).call(this),
-function(){
-    "use strict";
-    angular.module(
-        "core",
-        [
-            "duScroll",
-            "ngAnimate",
-            "ui.router",
-            "ngSanitize",
-            "ngplus"
-        ]
-    )
-}.call(this),
+(function () {
+    'use strict';
+    angular
+        .module('app', ['ngRoute', 'ngAnimate', 'core'])
+        .module('core', ["duScroll","ngAnimate","ui.router","ngSanitize","ngplus"])
+        .controller('AppCtrl', ['$http', '$scope', '$mdSidenav', '$location', function ($http, $scope, $mdSidenav, $location) {
+            
+        }]);
+}());
+
 jQuery(document).ready(
     function(){
         "use strict";
