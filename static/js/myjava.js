@@ -1,8 +1,7 @@
 (function () {
     'use strict';
     angular
-        .module('app', ['ngRoute', 'ngAnimate', 'core'])
-        .module('core', ["duScroll","ngAnimate","ui.router","ngSanitize","ngplus"])
+        .module('app', ['ngRoute', 'ngAnimate'])
         .controller('AppCtrl', ['$http', '$scope', '$mdSidenav', '$location', function ($http, $scope, $mdSidenav, $location) {
             
         }]);
