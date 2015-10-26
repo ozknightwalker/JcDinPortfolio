@@ -163,4 +163,4 @@ function(){
 		.constant("TimelineLite",TimelineLite)
 		.constant("TweenMax",TweenMax)
 		.constant("Cubic",Cubic)
-}
+}(),
