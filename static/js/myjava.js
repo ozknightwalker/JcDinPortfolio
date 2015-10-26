@@ -201,4 +201,4 @@ function(){
 			e.scrollTo(i,0,1e3)
 		}
 	}
-	angular.module("core").controller("AppController",e),e.$inject=["$scope","$storage","TweenMax","Cubic"]}.call(this),
+	angular.module("core").controller("AppController",e),e.$inject=["$scope","$storage","TweenMax","Cubic"]}.call(this);
