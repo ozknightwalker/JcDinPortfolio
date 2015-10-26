@@ -2,7 +2,7 @@
     'use strict';
     angular
         .module('app', ['ngRoute', 'ngAnimate'])
-        .controller('AppCtrl', ['$http', '$scope', '$mdSidenav', '$location', function ($http, $scope, $mdSidenav, $location) {
+        .controller('AppController', ['$http', '$scope', '$mdSidenav', '$location', function ($http, $scope, $mdSidenav, $location) {
             
         }]);
 }());
