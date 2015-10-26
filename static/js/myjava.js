@@ -154,13 +154,5 @@
 				}
 				,6
 			)
-		}),
-function(){
-	"use strict";
-	angular.module("core")
-		.constant("toastr",toastr)
-		.constant("moment",moment)
-		.constant("TimelineLite",TimelineLite)
-		.constant("TweenMax",TweenMax)
-		.constant("Cubic",Cubic)
-}(),
+	}
+),
