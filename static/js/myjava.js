@@ -167,23 +167,6 @@ function(){
 function(){
 	"use strict";
 	function e(){
-
-	}
-	function i(e,i){
-		i.otherwise("/"),e.state(
-			"home",
-			{
-				url:"/",
-				templateUrl:"app/core/views/home.view.html",
-				controller:"HomeController as vm"
-			}
-		)
-	}
-
-	angular.module("core").config(i).run(e),e.$inject=["$rootScope"],i.$inject=["$stateProvider","$urlRouterProvider"]}.call(this),
-function(){
-	"use strict";
-	function e(){
 		var e=angular.element(document.getElementById("container")),i=angular.element(document.getElementById("section-2"));
 		this.positions=["UI & UX Desiner","Software Engineer"],
 		this.birthday="September 11, 1990",
@@ -201,4 +184,4 @@ function(){
 			e.scrollTo(i,0,1e3)
 		}
 	}
-	angular.module("core").controller("AppController",e),e.$inject=["$scope","$storage","TweenMax","Cubic"]}.call(this);
+	angular.module("core").controller("AppController",e),e.$inject=["$scope","TweenMax","Cubic"]}.call(this);
