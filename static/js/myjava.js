@@ -12,52 +12,15 @@ jQuery(document).ready(
     function(){
         "use strict";
         function e(){
-            var e=new TimelineLite;
-            e.to(
-                s,1,{
-                    width:"200px",
-                    height:"200px",
-                    marginLeft:"-100px",
-                    marginTop:"-100px",
-                    delay:.5
-                }
-            ).to(
-                s,1,{
-                    borderRadius:"0px"
-                },1
-            ).to(
-                s,1,{
-                    width:"400px",
-                    marginLeft:"-200px"
-                },1.5
-            ).to(
-                a,1,{
-                    autoAlpha:1
-                },1.7
-            ).to(
-                a,1,{
-                    autoAlpha:0,
-                    delay:1
-                }
-            ).to(
-                s,1,{
-                    rotation:"360deg",
-                    left:"0px",
-                    top:"0px",
-                    marginLeft:"0",
-                    marginTop:"0",
-                    width:"250px",
-                    height:"10px"
-                },4.5
-            ).to(
-                s,1,{
-                    autoAlpha:0
-                },5
-            ).to(
-                t,0,{
-                    display:"none"
-                }
-            )
+            var myvar=new TimelineLite;
+            myvar
+                .to(s,1,{width:"200px",height:"200px",marginLeft:"-100px",marginTop:"-100px",delay:.5})
+                .to(s,1,{borderRadius:"0px"},1).to(s,1,{width:"400px",marginLeft:"-200px"},1.5)
+                .to(a,1,{autoAlpha:1},1.7)
+                .to(a,1,{autoAlpha:0,delay:1})
+                .to(s,1,{rotation:"360deg",left:"0px",top:"0px",marginLeft:"0",marginTop:"0",width:"250px",height:"10px"},4.5)
+                .to(s,1,{autoAlpha:0},5)
+                .to(t,0,{display:"none"})
         }
         var i=$(".io-nav"),
             t=$(".intro"),
