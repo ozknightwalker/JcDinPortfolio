@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en" class="no-js" ng-app="app">
     <head>
+        <base href="/testing/">
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
         <meta name="viewport" content="width=device-width, initial-scale=1" /> 
@@ -14,30 +15,23 @@
         <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
         <link rel="stylesheet" type="text/css" href="{% static 'css/component.css' %}" />
         <script src="{% static 'js/modernizr.custom.25376.js' %}"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
     </head>
     <body>
-        <div id="perspective" class="perspective effect-airbnb">
-            <div class="container">
-                <div class="wrapper"><!-- wrapper needed for scroll -->
-                    <header class="io-header">
-                        <h1>Perspective Page View Navigation <span>Transforms the page in 3D to reveal a menu</span></h1>   
-                    </header>
-                    <button class="menu__handle" id="showMenu"><span>Menu</span></button>
-                    <div class="main clearfix">
-                        <div class="column">
-                            <p>Click on this button to see the content being pushed away in 3D to reveal a navigation or other items.</p>
-                        </div>
-                    </div><!-- /main -->
-                </div><!-- wrapper -->
-            </div><!-- /container -->
-            <nav class="outer-nav left vertical">
-                <a href="#" class="icon-home">Profile</a>
-                <a href="#" class="icon-news">Experience</a>
-                <a href="#" class="icon-image">Works</a>
-                <a href="#" class="icon-star">Powers</a>
-            </nav>
+        <div id="perspective" class="perspective effect-airbnb" ng-controller="AppCtrl">
+            <div ng-view class="view-animate container" onload='loader()'>
+            </div>
+            {% verbatim %}
+            <nav class="outer-nav left vertical"><!-- menu -->
+                <a ng-repeat="menu in menus" class="{{ menu.icon }}" ng-click="close_menu($index)">
+                    {{ menu.title }}
+                </a>
+            </nav><!-- /menu -->
+            {% endverbatim %}
         </div><!-- /perspective -->
+        <script src="https://code.angularjs.org/1.4.7/angular-route.min.js"></script>
+        <script src="https://code.angularjs.org/1.4.7/angular-animate.min.js"></script>
+        <script src="{% static 'js/app.js' %}"></script>
         <script src="{% static 'js/classie.js' %}"></script>
-        <script src="{% static 'js/menu.js' %}"></script>
     </body>
 </html>

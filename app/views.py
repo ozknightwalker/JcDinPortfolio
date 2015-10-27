@@ -7,3 +7,11 @@ class MainView(generic.TemplateView):
 
 class TestView(generic.TemplateView):
     template_name = 'TestingView.html'
+
+
+class ProfileView(generic.TemplateView):
+    template_name = 'ProfileView.html'
+
+
+class ExperienceView(generic.TemplateView):
+    template_name = 'ExperienceView.html'
