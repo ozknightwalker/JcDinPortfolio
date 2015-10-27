@@ -215,7 +215,7 @@ button:active {
 }
 
 .menu__handle {
-    background: #2F3238 none repeat scroll 0% 0%;
+    background: transparent;
     border: medium none;
     width: 30px;
     height: 24px;
@@ -223,7 +223,7 @@ button:active {
     outline: medium none;
     position: absolute;
     top: 3px;
-    right: 70px;
+    left: 70px;
     z-index: 2000;
 }
 
