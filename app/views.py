@@ -6,4 +6,4 @@ class MainView(generic.TemplateView):
 
 
 class TestView(generic.TemplateView):
-	template_name = 'TestingView.html'
+    template_name = 'TestingView.html'

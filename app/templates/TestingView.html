@@ -2,110 +2,65 @@
 <html lang="en" class="no-js">
     <head>
         <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Jc Din Portfolio</title>
-        <meta name="description" content="Jc Din's Portfolio" />
-        <meta name="keywords" content="jc,din, jc portfolio" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+        <title>Perspective Page View Navigation</title>
+        <meta name="description" content="This is Jc Din's portfolio" />
+        <meta name="keywords" content="jc din, jc portfolio" />
         <meta name="author" content="Jc Din" />
+        <!-- <link rel="shortcut icon" href="../favicon.ico"> -->
         {% load staticfiles %}
-        <link rel="stylesheet" type="text/css" href="{% static "css/normalize.css" %}" />
-        <link rel="stylesheet" type="text/css" href="{% static "fonts/font-awesome-4.2.0/css/font-awesome.min.css" %}" />
-        <!-- <link rel="stylesheet" type="text/css" href="css/demo.css" /> -->
-        <link rel="stylesheet" type="text/css" href="{% static "css/demo.css" %}">
-        <link rel="stylesheet" type="text/css" href="{% static "css/sidebar.css" %}">
-        <script type="text/javascript" src="{% static "js/snap.svg-min.js" %}"></script>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/normalize.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'css/demo.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'css/component.css' %}" />
+        <script src="{% static 'js/modernizr.custom.25376.js' %}"></script>
     </head>
-    <body class="theme-1">
-        <div class="container">
-            <nav id="menu" class="menu">
-                <button class="menu__handle"><span>Menu</span></button>
-                <div class="menu__inner">
-                    <ul>
-                        <li><a href="#"><i class="fa fa-fw fa-home"></i><span>Home<span></a></li>
-                        <li><a href="#"><i class="fa fa-fw fa-heart"></i><span>Favs<span></a></li>
-                        <li><a href="#"><i class="fa fa-fw fa-folder"></i><span>Files<span></a></li>
-                        <li><a href="#"><i class="fa fa-fw fa-tachometer"></i><span>Stats<span></a></li>
-                    </ul>
-                </div>
-                <div class="morph-shape" data-morph-open="M300-10c0,0,295,164,295,410c0,232-295,410-295,410" data-morph-close="M300-10C300-10,5,154,5,400c0,232,295,410,295,410">
-                    <svg width="100%" height="100%" viewBox="0 0 600 800" preserveAspectRatio="none">
-                        <path fill="none" d="M300-10c0,0,0,164,0,410c0,232,0,410,0,410"/>
-                    </svg>
-                </div>
-            </nav>
-            <div class="main">
-                <header class="codrops-header">
-                    <h1>Elastic SVG Elements <span>Adding elasticity with SVG shape animations</span></h1>
-                    <div class="codrops-links">
-                        <a class="codrops-icon codrops-icon-prev" href="http://tympanus.net/Development/DialogEffects/" title="Previous Demo"><span>Previous Demo</span></a> / 
-                        <a class="codrops-icon codrops-icon-drop" href="http://tympanus.net/codrops/?p=21555" title="Back to the article"><span>Back to the Codrops Article</span></a>
+    <body>
+        <div id="perspective" class="perspective effect-airbnb">
+            <div class="container">
+                <div class="wrapper"><!-- wrapper needed for scroll -->
+                    <!-- Top Navigation -->
+                    <div class="codrops-top clearfix">
+                        <a class="codrops-icon codrops-icon-prev" href="http://tympanus.net/Development/ProgressButtonStyles/"><span>Previous Demo</span></a>
+                        <span class="right"><a class="codrops-icon codrops-icon-drop" href="http://tympanus.net/codrops/?p=17915"><span>Back to the Codrops Article</span></a></span>
                     </div>
-                    <nav class="codrops-demos">
-                        <a class="current-demo" href="index.html">Sidebar Menu</a>
-                        <a href="pullupmenu.html">Pull-Up Menu</a>
-                        <a href="dropdown.html">Drop-down Menu</a>
-                        <a href="drag.html">Drag &amp; Drop</a>
-                        <a href="collapseexpand.html">Collapse &amp; Expand</a>
-                        <a href="hamburger.html">Menu Icon</a>
-                        <a href="circlemenu.html">Circular Menu</a>
-                        <a href="inputs.html">Inputs</a>
-                        <a href="button.html">Buttons</a>
-                    </nav>
-                </header>
-            </div><!-- /main -->
-        </div><!-- /container -->
-        <script type="text/javascript" src="{% static "js/classie.js" %}"></script>
-        <script>
-            (function() {
-
-                function SVGMenu( el, options ) {
-                    this.el = el;
-                    this.init();
-                }
-
-                SVGMenu.prototype.init = function() {
-                    this.trigger = this.el.querySelector( 'button.menu__handle' );
-                    this.shapeEl = this.el.querySelector( 'div.morph-shape' );
-
-                    var s = Snap( this.shapeEl.querySelector( 'svg' ) );
-                    this.pathEl = s.select( 'path' );
-                    this.paths = {
-                        reset : this.pathEl.attr( 'd' ),
-                        open : this.shapeEl.getAttribute( 'data-morph-open' ),
-                        close : this.shapeEl.getAttribute( 'data-morph-close' )
-                    };
-
-                    this.isOpen = false;
-
-                    this.initEvents();
-                };
-
-                SVGMenu.prototype.initEvents = function() {
-                    this.trigger.addEventListener( 'click', this.toggle.bind(this) );
-                };
-
-                SVGMenu.prototype.toggle = function() {
-                    var self = this;
-
-                    if( this.isOpen ) {
-                        classie.remove( self.el, 'menu--anim' );
-                        setTimeout( function() { classie.remove( self.el, 'menu--open' );   }, 250 );
-                    }
-                    else {
-                        classie.add( self.el, 'menu--anim' );
-                        setTimeout( function() { classie.add( self.el, 'menu--open' );  }, 250 );
-                    }
-                    this.pathEl.stop().animate( { 'path' : this.isOpen ? this.paths.close : this.paths.open }, 350, mina.easeout, function() {
-                        self.pathEl.stop().animate( { 'path' : self.paths.reset }, 800, mina.elastic );
-                    } );
-                    
-                    this.isOpen = !this.isOpen;
-                };
-
-                new SVGMenu( document.getElementById( 'menu' ) );
-
-            })();
-        </script>
+                    <header class="codrops-header">
+                        <h1>Perspective Page View Navigation <span>Transforms the page in 3D to reveal a menu</span></h1>   
+                    </header>
+                    <div class="main clearfix">
+                        <div class="column">
+                            <p><button id="showMenu">Show Menu</button></p>
+                            <p>Click on this button to see the content being pushed away in 3D to reveal a navigation or other items.</p>
+                        </div>
+                        <div class="column">
+                            <nav class="codrops-demos">
+                                <a href="index.html" class="current-demo">Airbnb Effect</a>
+                                <a href="index2.html">Move Left</a>
+                                <a href="index3.html">Rotate Left</a>
+                                <a href="index4.html">Move Down</a>
+                                <a href="index5.html">Rotate Top</a>
+                                <a href="index6.html">Lay Down</a>
+                            </nav>
+                        </div>
+                        <div class="related">
+                            <p>If you enjoyed this demo you might also like:</p>
+                            <p><a href="http://tympanus.net/Tutorials/AnimatedBorderMenus/">Animated Border Menus</a></p>
+                            <p><a href="http://tympanus.net/Development/SidebarTransitions/">Transitions for Off-Canvas Navigations</a></p>
+                        </div>
+                    </div><!-- /main -->
+                </div><!-- wrapper -->
+            </div><!-- /container -->
+            <nav class="outer-nav left vertical">
+                <a href="#" class="icon-home">Home</a>
+                <a href="#" class="icon-news">News</a>
+                <a href="#" class="icon-image">Images</a>
+                <a href="#" class="icon-upload">Uploads</a>
+                <a href="#" class="icon-star">Favorites</a>
+                <a href="#" class="icon-mail">Messages</a>
+                <a href="#" class="icon-lock">Security</a>
+            </nav>
+        </div><!-- /perspective -->
+        <script src="{% static 'js/classie.js' %}"></script>
+        <script src="{% static 'js/menu.js' %}"></script>
     </body>
 </html>
