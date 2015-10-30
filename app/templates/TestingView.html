@@ -19,7 +19,7 @@
     </head>
     <body>
         <div id="perspective" class="perspective effect-airbnb" ng-controller="AppCtrl">
-            <div ng-view class="view-animate container" onload='loader()'>
+            <div ng-view class="view-animate container" onload='loader()' ng-click="ngViewClickEvent()">
             </div>
             {% verbatim %}
             <nav class="outer-nav left vertical"><!-- menu -->
