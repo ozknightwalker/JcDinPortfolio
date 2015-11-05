@@ -47,9 +47,6 @@
                     return $location.protocol() + '://'+ $location.host()+":"+ $location.port();
                 }
             };
-            $scope.loader = function () {
-                $scope.loaded = true;
-            };
             $scope.alertError = function (title, message) {
                 swal(title, message, "error");
             };
