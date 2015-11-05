@@ -165,6 +165,8 @@
                 // // animate..
                 // setTimeout( function () { classie.add( perspectiveWrapper, 'animate' ); }, 25 );
                 $scope.menuEnabled = true;
+                $scope.menu_init();
+                console.log("clicked then init");
             }
             $scope.ngViewClickEvent = function () {
                 if ($scope.menuEnabled) {
@@ -195,7 +197,6 @@
                 docscroll = 0,
                 clickevent = mobilecheck() ? 'touchstart' : 'click';
             $scope.menu_init = function () {
-                console.log("clicked ang menu");
                 var showMenu = document.getElementById( 'showMenu' ),
                     perspectiveWrapper = document.getElementById( 'perspective' ),
                     container = perspectiveWrapper.querySelector( '.container' ),
