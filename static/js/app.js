@@ -195,6 +195,7 @@
                 docscroll = 0,
                 clickevent = mobilecheck() ? 'touchstart' : 'click';
             $scope.menu_init = function () {
+                console.log("clicked ang menu");
                 var showMenu = document.getElementById( 'showMenu' ),
                     perspectiveWrapper = document.getElementById( 'perspective' ),
                     container = perspectiveWrapper.querySelector( '.container' ),
