@@ -1,12 +1,24 @@
+{% load staticfiles %}
 <div class="container">
-    <div class="wrapper"><!-- wrapper needed for scroll -->
+    <div class="wrapper "><!-- wrapper needed for scroll -->
         <header class="io-header">
-            <h1>My Experiences<span>a Dev Ops and Full-Stack Developer </span></h1>   
+            <h1>My Experiences<span>Warning! May contain myself!</span></h1>   
         </header>
         <button class="menu__handle" id="showMenu" ng-click="menuclick()"><span>Menu</span></button>
         <div class="main clearfix">
             <div class="column">
-                <p>Content is Coming Fast! Hehehehe</p>
+                <h1 class="title center-vert">
+                    <a href="https://channelfix.com/">@
+                        <img src="{% static 'img/cf.png'%}"/>
+                    </a>
+                </h1>
+            </div>
+            <div class="column">
+                <p>
+                    <small>
+                        I was a frontend & backend developer developing our. The working environment is Excellent. <b>"Food Everywhere"</b> and its <b>FREE</b>. There where many OJT takers coming from UP so I was teamed up with most if them which I was very greatful. :)
+                    </small>
+                </p>
             </div>
         </div><!-- /main -->
     </div><!-- wrapper -->

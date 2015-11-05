@@ -1,0 +1,25 @@
+{% load staticfiles %}
+<div class="container">
+    <div class="wrapper"><!-- wrapper needed for scroll -->
+        <header class="io-header">
+            <h1>My Works<span></span></h1>   
+        </header>
+        <button class="menu__handle" id="showMenu" ng-click="menuclick($event)"><span>Menu</span></button>
+        <div class="main clearfix">
+            <h1 class="title">
+                <small>
+                    When I was working with Channelfix as a Team Leader and also a Lead Developer. "<b>Vinna</b>", a  job search engine equiped with django and created for innovation in mind, is the project that me and my Team created.
+                </small>
+            </h1>
+            <div class="column text-center">
+                <img class="works" src="{% static 'img/works/original.png' %}" alt="Original version of Vinna"/>
+                <small><b>Original Version</b></small>
+            </div>
+            <div class="column text-center">
+                <img class="works" src="{% static 'img/works/material_version.png' %}" alt="Material version of Vinna"/>
+                <small><b>Material Version</b></small>
+            </div>
+            <h1 class="title text-small">You might notice that there where 2 versions of Vinna. Thats because I was trying to make use of other CSS frameworks other than using Bootstrap, which made me bored at most cases. Also both versions are created in parallel so that the project won't suffer any unexpected outcomes.</h1>
+        </div><!-- /main -->
+    </div><!-- wrapper -->
+</div><!-- /container -->

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js" ng-app="app">
     <head>
-        <base href="/testing/">
+        <base href="/Portfolio/">
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
         <meta name="viewport" content="width=device-width, initial-scale=1" /> 
@@ -17,8 +17,11 @@
         <script src="{% static 'js/modernizr.custom.25376.js' %}"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
     </head>
-    <body>
-        <div id="perspective" class="perspective effect-airbnb" ng-controller="AppCtrl">
+    <body ng-controller="AppCtrl">
+        <div class="preload animate-hide" ng-show="loaded">
+            <img src="{% static 'img/loader.gif' %}">
+        </div>
+        <div id="perspective" class="perspective effect-airbnb animate-hide" ng-show="!loaded">
             <div ng-view class="view-animate container" onload='loader()' ng-click="ngViewClickEvent()">
             </div>
             {% verbatim %}

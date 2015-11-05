@@ -30,6 +30,41 @@ body {
 	cursor: auto;
 }
 
+.preload{
+	position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: white;
+    z-index: 10;
+}
+
+.animate-hide {
+  transition: all ease 1.5s;
+  opacity: 1;
+}
+
+.animate-hide.ng-hide {
+  opacity: 0;
+}
+
+.preload img{
+	position: absolute;
+	top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+svg{
+	width: 100px;
+}
+
+.power_block{
+	margin-bottom: 50px;
+}
+
 a {
 	text-decoration: none;
 	color: #ed8151;
@@ -39,6 +74,14 @@ a {
 a:hover, a:focus {
 	color: #e86a32;
 	outline: none;
+}
+
+.text-center{
+	text-align: center !important;
+}
+
+.text-small{
+	font-size: 1em !important;
 }
 
 /* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
@@ -60,11 +103,26 @@ a:hover, a:focus {
 .io-header {
 	margin: 0 auto 3em;
 	padding: 3em;
+	padding-bottom: 0em !important;
 	text-align: center;
+}
+
+.io-header img{
+	border-radius: 100%;
+	-moz-border-radius:100%;
+	width: 250px;
+	height: 250px;
+	border:8px solid #388E3C;
+	margin-bottom: -1.7em;
+}
+
+.io-header img h1{
+	margin:0 !important;
 }
 
 .io-header h1 {
 	margin: 0;
+	margin-top:.8em;
 	font-weight: 300;
 	font-size: 2.625em;
 	line-height: 1.3;
@@ -133,6 +191,34 @@ a:hover, a:focus {
 	margin: 0 auto;
 }
 
+/*.wrapper{
+	background-image: url('../img/bg.jpg');
+	background-size: cover;
+}*/
+
+.main .title{
+	text-align: center;
+	font-weight: 300;
+	font-size: 2em;
+	padding: 0 0 0.5em;
+	margin: 0;
+	line-height: 1.5;
+}
+@media screen and (max-width: 46.0625em){
+	.center-vert {
+	}	
+}
+
+.center-vert {
+	text-align: right !important;
+	margin: 25% auto auto !important;
+}
+
+.main .title .social{
+	text-decoration: underline;
+	color: #388E3C;
+}
+
 .column {
 	float: left;
 	width: 50%;
@@ -149,10 +235,24 @@ a:hover, a:focus {
 
 .column p {
 	font-weight: 300;
-	font-size: 2em;
+	font-size: 1.9em;
 	padding: 0 0 0.5em;
 	margin: 0;
 	line-height: 1.5;
+}
+
+.works {
+	display: block;
+	margin: 0 auto;
+	width: 70%;
+	height: 70%;
+}
+
+.column .school_logo{
+	border-radius: 100%;
+	margin:auto;
+	width: 150px;
+	height:150px;
 }
 
 button {
@@ -173,7 +273,10 @@ button {
 }
 
 @media screen and (max-width: 46.0625em) {
-
+	.center-vert{
+		margin: auto !important;
+		text-align: center !important;
+	}
 	.io-header {
 		margin-bottom: 0;
 		padding-bottom: 1em;
@@ -188,8 +291,9 @@ button {
 	}
 
 	.column p {
-		font-size: 1.5em;
+		font-size: 1.4em;
 	}
+
 
 	.column:nth-child(2) {
 		text-align: center;

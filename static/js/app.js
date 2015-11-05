@@ -1,7 +1,7 @@
 (function () {
     'use strict';
     angular
-        .module('app', ['ngRoute'])
+        .module('app', ['ngRoute', 'ngAnimate'])
         .config(['$routeProvider', '$locationProvider',
             function ($routeProvider, $locationProvider) {
                 $routeProvider
@@ -14,13 +14,12 @@
                         controller: 'ExperienceCtrl'
                     })
                     .when('/Works', {
-                        templateUrl: '/visit/Works',
-                        controller: 'AppCtrl',
-                        controllerAs: 'Recipe'
+                        templateUrl: '/visit/Work',
+                        controller: 'WorkCtrl',
                     })
                     .when('/Powers', {
                         templateUrl: '/visit/Power',
-                        controller: 'AppCtrl',
+                        controller: 'PowerCtrl',
                     })
                     .otherwise({
                         redirectTo: '/Profile'
@@ -33,7 +32,14 @@
         .controller('ExperienceCtrl', ['$http', '$scope', '$location', function ($http, $scope, $location) {
             $scope.$parent.menu_init();
         }])
+        .controller('WorkCtrl', ['$http', '$scope', '$location', function ($http, $scope, $location) {
+            $scope.$parent.menu_init();
+        }])
+        .controller('PowerCtrl', ['$http', '$scope', '$location', function ($http, $scope, $location) {
+            $scope.$parent.menu_init();
+        }])
         .controller('AppCtrl', ['$http', '$scope', '$location', '$templateCache', function ($http, $scope, $location, $templateCache) {
+            $scope.loaded = true;
             $scope.base_url = function (string) {
                 if (string !== undefined) {
                     return $location.protocol() + '://'+ $location.host()+":"+ $location.port() + '/'+ string;
@@ -65,16 +71,18 @@
                         function (response) {
                             $http({
                                 method : 'GET',
-                                url : $scope.base_url('visit/Powers'),
+                                url : $scope.base_url('visit/Power'),
                                 cache : $templateCache
                             }).then(
                                 function(response){
                                     $http({
                                         method : 'GET',
-                                        url : $scope.base_url('visit/Works'),
+                                        url : $scope.base_url('visit/Work'),
                                         cache : $templateCache
                                     }).then(
-                                        function(response){},
+                                        function(response){
+                                            $scope.loaded = false;
+                                        },
                                         function(response){
                                             //Error
                                             $scope.alertError('TemplateError', 'Loading Works encountered an error');
@@ -135,7 +143,7 @@
                 //     console.log(ev.target);
                 //     console.log('null');
                 // } else {
-                    console.log($scope.animationVars.length);
+                    // console.log($scope.animationVars.length);
                 // }
                 // $scope.animationVars = {
                 //     'perspectiveWrapper' : document.getElementById( 'perspective' ),
@@ -144,7 +152,6 @@
                 // }
             }
             $scope.menuclick = function (ev) {
-                console.log(ev);
                 $scope.animationVarsInit(ev);
                 // ev.stopPropagation();
                 // ev.preventDefault();
@@ -161,7 +168,6 @@
             }
             $scope.ngViewClickEvent = function () {
                 if ($scope.menuEnabled) {
-                    console.log('menu closing');
                     $scope.menuEnabled = false;
                 }
             }
@@ -257,7 +263,7 @@
                             classie.remove( perspectiveWrapper, 'animate' );
                         }, 400);
                     }
-                } );
+                });
             }
         }]);
 }());
