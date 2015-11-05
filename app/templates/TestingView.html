@@ -22,7 +22,7 @@
             <img src="{% static 'img/loader.gif' %}">
         </div>
         <div id="perspective" class="perspective effect-airbnb animate-hide" ng-show="!loaded">
-            <div ng-view class="view-animate container" onload='loader()' ng-click="ngViewClickEvent()">
+            <div ng-view class="view-animate container fade" onload='loader()' ng-click="ngViewClickEvent()">
             </div>
             {% verbatim %}
             <nav class="outer-nav left vertical"><!-- menu -->

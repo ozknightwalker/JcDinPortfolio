@@ -48,7 +48,7 @@
                 }
             };
             $scope.loader = function () {
-                console.log('loaded');
+                $scope.loaded = true;
             };
             $scope.alertError = function (title, message) {
                 swal(title, message, "error");
