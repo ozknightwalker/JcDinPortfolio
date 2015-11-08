@@ -29,7 +29,7 @@ html, body, .perspective {
 	transform: translateZ(0) translateX(0) rotateY(0deg);
 }
 
-.container:after {
+.container::after {
 	content: '';
 	position: absolute;
 	top: 0;
@@ -37,11 +37,9 @@ html, body, .perspective {
 	width: 100%;
 	height: 0px;
 	opacity: 0;
-	filter: alpha(opacity=0);
 	background: rgba(0,0,0,0.2);
 	/* the transition delay of the height needs to be synced with the container transition time */
-	-webkit-transition: opacity 0.4s, height 0s 0.4s;
-	        transition: opacity 0.4s, height 0s 0.4s;
+	transition: opacity 0.4s, height 0s 0.4s;
 }
 
 .wrapper {
@@ -76,12 +74,10 @@ html, body, .perspective {
 	-webkit-transform: translateZ(-1px); /* solves a rendering bug in Chrome on Windows */
 }
 
-.animate .container:after {
+.animate .container::after {
 	opacity: 1;
-	filter: alpha(opacity=100);
 	height: 101%;
-	-webkit-transition: opacity 0.3s;
-	        transition: opacity 0.3s;
+	transition: opacity 0.3s;
 }
 
 /* Outer Nav */
@@ -94,8 +90,7 @@ html, body, .perspective {
 .outer-nav.vertical {
 	top: 50%;
 	-webkit-transform: translateY(-50%);
-	-ms-transform: translateY(-50%);
-	    transform: translateY(-50%);
+	transform: translateY(-50%);
 	-webkit-transform-style: preserve-3d;
 	transform-style: preserve-3d;
 }
@@ -106,8 +101,7 @@ html, body, .perspective {
 	max-width: 1000px;
 	text-align: center;
 	-webkit-transform: translateX(-50%);
-	-ms-transform: translateX(-50%);
-	    transform: translateX(-50%);
+	transform: translateX(-50%);
 }
 
 .outer-nav.left {
@@ -132,8 +126,7 @@ html, body, .perspective {
 	font-weight: 300;
 	margin: 0 0 30px 0;
 	color: #fff;
-	-webkit-transition: color 0.3s;
-	        transition: color 0.3s;
+	transition: color 0.3s;
 	-webkit-transform-style: preserve-3d;
 	transform-style: preserve-3d;
 }
@@ -150,7 +143,7 @@ html, body, .perspective {
 	margin: 15px 20px;
 }
 
-.outer-nav a:before {
+.outer-nav a::before {
 	display: inline-block;
 	font-family: 'typicons';
 	speak: none;
@@ -166,14 +159,14 @@ html, body, .perspective {
 	backface-visibility: hidden;
 }
 
-.icon-news:before { content: "\e600" }
-.icon-home:before { content: "\e601" }
-.icon-image:before { content: "\e602" }
-.icon-upload:before { content: "\e603" }
-.icon-star:before { content: "\e604" }
-.icon-mail:before { content: "\e605" }
-.icon-lock:before { content: "\e606" }
-.icon-chart-pie:before { content: "\e607" }
+.icon-news::before { content: "\e600" }
+.icon-home::before { content: "\e601" }
+.icon-image::before { content: "\e602" }
+.icon-upload::before { content: "\e603" }
+.icon-star::before { content: "\e604" }
+.icon-mail::before { content: "\e605" }
+.icon-lock::before { content: "\e606" }
+.icon-chart-pie::before { content: "\e607" }
 
 /* Individual Effects */
 
@@ -183,12 +176,10 @@ html, body, .perspective {
 }
 
 .effect-airbnb .container {
-	-webkit-transition: -webkit-transform 0.4s;
-	        transition: -webkit-transform 0.4s;
+	transition: -webkit-transform 0.4s;
 	transition: transform 0.4s;
 	-webkit-transform-origin: 50% 50%;
-	-ms-transform-origin: 50% 50%;
-	    transform-origin: 50% 50%;
+	transform-origin: 50% 50%;
 }
 
 .effect-airbnb.animate .container {
@@ -202,51 +193,40 @@ html, body, .perspective {
 
 .effect-airbnb .outer-nav a {
 	opacity: 0;
-	filter: alpha(opacity=0);
 	-webkit-transform: translateX(-150px);
-	-ms-transform: translateX(-150px);
-	    transform: translateX(-150px);
-	-webkit-transition: -webkit-transform 0.4s, opacity 0.4s;
-	        transition: -webkit-transform 0.4s, opacity 0.4s;
+	transform: translateX(-150px);
+	transition: -webkit-transform 0.4s, opacity 0.4s;
 	transition: transform 0.4s, opacity 0.4s;
 }
 
 .effect-airbnb.animate .outer-nav a {
 	opacity: 1;
-	filter: alpha(opacity=100);
 	-webkit-transform: translateX(0);
-	-ms-transform: translateX(0);
-	    transform: translateX(0);
+	transform: translateX(0);
 }
 
 .effect-airbnb.animate .outer-nav a:nth-child(2) {
-	-webkit-transition-delay: 0.04s;
-	        transition-delay: 0.04s;
+	transition-delay: 0.04s;
 }
 
 .effect-airbnb.animate .outer-nav a:nth-child(3) {
-	-webkit-transition-delay: 0.08s;
-	        transition-delay: 0.08s;
+	transition-delay: 0.08s;
 }
 
 .effect-airbnb.animate .outer-nav a:nth-child(4) {
-	-webkit-transition-delay: 0.12s;
-	        transition-delay: 0.12s;
+	transition-delay: 0.12s;
 }
 
 .effect-airbnb.animate .outer-nav a:nth-child(5) {
-	-webkit-transition-delay: 0.16s;
-	        transition-delay: 0.16s;
+	transition-delay: 0.16s;
 }
 
 .effect-airbnb.animate .outer-nav a:nth-child(6) {
-	-webkit-transition-delay: 0.2s;
-	        transition-delay: 0.2s;
+	transition-delay: 0.2s;
 }
 
 .effect-airbnb.animate .outer-nav a:nth-child(7) {
-	-webkit-transition-delay: 0.24s;
-	        transition-delay: 0.24s;
+	transition-delay: 0.24s;
 }
 
 /* Effect Move Left */
@@ -255,15 +235,13 @@ html, body, .perspective {
 }
 
 .effect-moveleft .container {
-	-webkit-transition: -webkit-transform 0.4s;
-	        transition: -webkit-transform 0.4s;
+	transition: -webkit-transform 0.4s;
 	transition: transform 0.4s;
 	-webkit-transform-origin: 50% 50%;
-	-ms-transform-origin: 50% 50%;
-	    transform-origin: 50% 50%;
+	transform-origin: 50% 50%;
 }
 
-.effect-moveleft .container:after {
+.effect-moveleft .container::after {
 	background: rgba(255,255,255,0.6);
 }
 
@@ -279,11 +257,9 @@ html, body, .perspective {
 .effect-moveleft .outer-nav a {
 	color: #e86a32;
 	opacity: 0;
-	filter: alpha(opacity=0);
 	-webkit-transform: translateX(100px) translateZ(-1000px);
 	transform: translateX(100px) translateZ(-1000px);
-	-webkit-transition: -webkit-transform 0.4s, opacity 0.4s;
-	        transition: -webkit-transform 0.4s, opacity 0.4s;
+	transition: -webkit-transform 0.4s, opacity 0.4s;
 	transition: transform 0.4s, opacity 0.4s;
 }
 
@@ -293,39 +269,32 @@ html, body, .perspective {
 
 .effect-moveleft.animate .outer-nav a {
 	opacity: 1;
-	filter: alpha(opacity=100);
 	-webkit-transform: translateX(0) translateZ(0);
 	transform: translateX(0) translateZ(0);
 }
 
 .effect-moveleft.animate .outer-nav a:nth-child(2) {
-	-webkit-transition-delay: 0.04s;
-	        transition-delay: 0.04s;
+	transition-delay: 0.04s;
 }
 
 .effect-moveleft.animate .outer-nav a:nth-child(3) {
-	-webkit-transition-delay: 0.08s;
-	        transition-delay: 0.08s;
+	transition-delay: 0.08s;
 }
 
 .effect-moveleft.animate .outer-nav a:nth-child(4) {
-	-webkit-transition-delay: 0.12s;
-	        transition-delay: 0.12s;
+	transition-delay: 0.12s;
 }
 
 .effect-moveleft.animate .outer-nav a:nth-child(5) {
-	-webkit-transition-delay: 0.16s;
-	        transition-delay: 0.16s;
+	transition-delay: 0.16s;
 }
 
 .effect-moveleft.animate .outer-nav a:nth-child(6) {
-	-webkit-transition-delay: 0.2s;
-	        transition-delay: 0.2s;
+	transition-delay: 0.2s;
 }
 
 .effect-moveleft.animate .outer-nav a:nth-child(7) {
-	-webkit-transition-delay: 0.24s;
-	        transition-delay: 0.24s;
+	transition-delay: 0.24s;
 }
 
 /* Effect Rotate Left */
@@ -334,15 +303,13 @@ html, body, .perspective {
 }
 
 .effect-rotateleft .container {
-	-webkit-transition: -webkit-transform 0.4s;
-	        transition: -webkit-transform 0.4s;
+	transition: -webkit-transform 0.4s;
 	transition: transform 0.4s;
 	-webkit-transform-origin: 0% 50%;
-	-ms-transform-origin: 0% 50%;
-	    transform-origin: 0% 50%;
+	transform-origin: 0% 50%;
 }
 
-.effect-rotateleft .container:after {
+.effect-rotateleft .container::after {
 	background: rgba(255,255,255,0.6);
 }
 
@@ -357,49 +324,40 @@ html, body, .perspective {
 
 .effect-rotateleft .outer-nav a {
 	opacity: 0;
-	filter: alpha(opacity=0);
 	-webkit-transform: translateX(350px) translateZ(-1000px);
 	transform: translateX(350px) translateZ(-1000px);
-	-webkit-transition: -webkit-transform 0.4s, opacity 0.4s;
-	        transition: -webkit-transform 0.4s, opacity 0.4s;
+	transition: -webkit-transform 0.4s, opacity 0.4s;
 	transition: transform 0.4s, opacity 0.4s;
 }
 
 .effect-rotateleft.animate .outer-nav a {
 	opacity: 1;
-	filter: alpha(opacity=100);
 	-webkit-transform: translateX(0) translateZ(0);
 	transform: translateX(0) translateZ(0);
 }
 
 .effect-rotateleft.animate .outer-nav a:nth-child(2) {
-	-webkit-transition-delay: 0.04s;
-	        transition-delay: 0.04s;
+	transition-delay: 0.04s;
 }
 
 .effect-rotateleft.animate .outer-nav a:nth-child(3) {
-	-webkit-transition-delay: 0.08s;
-	        transition-delay: 0.08s;
+	transition-delay: 0.08s;
 }
 
 .effect-rotateleft.animate .outer-nav a:nth-child(4) {
-	-webkit-transition-delay: 0.08s;
-	        transition-delay: 0.08s;
+	transition-delay: 0.08s;
 }
 
 .effect-rotateleft.animate .outer-nav a:nth-child(5) {
-	-webkit-transition-delay: 0.16s;
-	        transition-delay: 0.16s;
+	transition-delay: 0.16s;
 }
 
 .effect-rotateleft.animate .outer-nav a:nth-child(6) {
-	-webkit-transition-delay: 0.2s;
-	        transition-delay: 0.2s;
+	transition-delay: 0.2s;
 }
 
 .effect-rotateleft.animate .outer-nav a:nth-child(7) {
-	-webkit-transition-delay: 0.24s;
-	        transition-delay: 0.24s;
+	transition-delay: 0.24s;
 }
 
 /* Effect Move Down */
@@ -408,15 +366,13 @@ html, body, .perspective {
 }
 
 .effect-movedown .container {
-	-webkit-transition: -webkit-transform 0.4s;
-	        transition: -webkit-transform 0.4s;
+	transition: -webkit-transform 0.4s;
 	transition: transform 0.4s;
 	-webkit-transform-origin: 50% 50%;
-	-ms-transform-origin: 50% 50%;
-	    transform-origin: 50% 50%;
+	transform-origin: 50% 50%;
 }
 
-.effect-movedown .container:after {
+.effect-movedown .container::after {
 	background: rgba(52, 73, 94, 0.5);
 }
 
@@ -431,12 +387,9 @@ html, body, .perspective {
 
 .effect-movedown .outer-nav a {
 	opacity: 0;
-	filter: alpha(opacity=0);
 	-webkit-transform: translateY(-20px);
-	-ms-transform: translateY(-20px);
-	    transform: translateY(-20px);
-	-webkit-transition: -webkit-transform 0.4s, opacity 0.4s;
-	        transition: -webkit-transform 0.4s, opacity 0.4s;
+	transform: translateY(-20px);
+	transition: -webkit-transform 0.4s, opacity 0.4s;
 	transition: transform 0.4s, opacity 0.4s;
 }
 
@@ -446,40 +399,32 @@ html, body, .perspective {
 
 .effect-movedown.animate .outer-nav a {
 	opacity: 1;
-	filter: alpha(opacity=100);
 	-webkit-transform: translateY(0);
-	-ms-transform: translateY(0);
-	    transform: translateY(0);
+	transform: translateY(0);
 }
 
 .effect-movedown.animate .outer-nav a:nth-child(2) {
-	-webkit-transition-delay: 0.04s;
-	        transition-delay: 0.04s;
+	transition-delay: 0.04s;
 }
 
 .effect-movedown.animate .outer-nav a:nth-child(3) {
-	-webkit-transition-delay: 0.08s;
-	        transition-delay: 0.08s;
+	transition-delay: 0.08s;
 }
 
 .effect-movedown.animate .outer-nav a:nth-child(4) {
-	-webkit-transition-delay: 0.12s;
-	        transition-delay: 0.12s;
+	transition-delay: 0.12s;
 }
 
 .effect-movedown.animate .outer-nav a:nth-child(5) {
-	-webkit-transition-delay: 0.16s;
-	        transition-delay: 0.16s;
+	transition-delay: 0.16s;
 }
 
 .effect-movedown.animate .outer-nav a:nth-child(6) {
-	-webkit-transition-delay: 0.2s;
-	        transition-delay: 0.2s;
+	transition-delay: 0.2s;
 }
 
 .effect-movedown.animate .outer-nav a:nth-child(7) {
-	-webkit-transition-delay: 0.24s;
-	        transition-delay: 0.24s;
+	transition-delay: 0.24s;
 }
 
 /* Effect Rotate Top */
@@ -488,15 +433,13 @@ html, body, .perspective {
 }
 
 .effect-rotatetop .container {
-	-webkit-transition: -webkit-transform 0.4s;
-	        transition: -webkit-transform 0.4s;
+	transition: -webkit-transform 0.4s;
 	transition: transform 0.4s;
 	-webkit-transform-origin: 50% 50%;
-	-ms-transform-origin: 50% 50%;
-	    transform-origin: 50% 50%;
+	transform-origin: 50% 50%;
 }
 
-.effect-rotatetop .container:after {
+.effect-rotatetop .container::after {
 	background: rgba(94,59,43,0.6);
 }
 
@@ -511,12 +454,10 @@ html, body, .perspective {
 
 .effect-rotatetop .outer-nav a {
 	opacity: 0;
-	filter: alpha(opacity=0);
 	color: #ed8151;
 	-webkit-transform: translateY(200px) translateZ(-1000px);
 	transform: translateY(200px) translateZ(-1000px);
-	-webkit-transition: -webkit-transform 0.4s, opacity 0.4s;
-	        transition: -webkit-transform 0.4s, opacity 0.4s;
+	transition: -webkit-transform 0.4s, opacity 0.4s;
 	transition: transform 0.4s, opacity 0.4s;
 }
 
@@ -526,39 +467,32 @@ html, body, .perspective {
 
 .effect-rotatetop.animate .outer-nav a {
 	opacity: 1;
-	filter: alpha(opacity=100);
 	-webkit-transform: translateY(0) translateZ(0);
 	transform: translateY(0) translateZ(0);
 }
 
 .effect-rotatetop.animate .outer-nav a:nth-child(2) {
-	-webkit-transition-delay: 0.04s;
-	        transition-delay: 0.04s;
+	transition-delay: 0.04s;
 }
 
 .effect-rotatetop.animate .outer-nav a:nth-child(3) {
-	-webkit-transition-delay: 0.08s;
-	        transition-delay: 0.08s;
+	transition-delay: 0.08s;
 }
 
 .effect-rotatetop.animate .outer-nav a:nth-child(4) {
-	-webkit-transition-delay: 0.12s;
-	        transition-delay: 0.12s;
+	transition-delay: 0.12s;
 }
 
 .effect-rotatetop.animate .outer-nav a:nth-child(5) {
-	-webkit-transition-delay: 0.16s;
-	        transition-delay: 0.16s;
+	transition-delay: 0.16s;
 }
 
 .effect-rotatetop.animate .outer-nav a:nth-child(6) {
-	-webkit-transition-delay: 0.2s;
-	        transition-delay: 0.2s;
+	transition-delay: 0.2s;
 }
 
 .effect-rotatetop.animate .outer-nav a:nth-child(7) {
-	-webkit-transition-delay: 0.24s;
-	        transition-delay: 0.24s;
+	transition-delay: 0.24s;
 }
 
 /* Effect Lay Down */
@@ -567,12 +501,10 @@ html, body, .perspective {
 }
 
 .effect-laydown .container {
-	-webkit-transition: -webkit-transform 0.4s;
-	        transition: -webkit-transform 0.4s;
+	transition: -webkit-transform 0.4s;
 	transition: transform 0.4s;
 	-webkit-transform-origin: 50% 150%;
-	-ms-transform-origin: 50% 150%;
-	    transform-origin: 50% 150%;
+	transform-origin: 50% 150%;
 }
 
 .effect-laydown.animate .container {
@@ -586,54 +518,44 @@ html, body, .perspective {
 
 .effect-laydown .outer-nav a {
 	opacity: 0;
-	filter: alpha(opacity=0);
 	-webkit-transform: translateY(-200px) translateZ(-1000px);
 	transform: translateY(-200px) translateZ(-1000px);
-	-webkit-transition: -webkit-transform 0.4s, opacity 0.4s;
-	        transition: -webkit-transform 0.4s, opacity 0.4s;
+	transition: -webkit-transform 0.4s, opacity 0.4s;
 	transition: transform 0.4s, opacity 0.4s;
 }
 
 .effect-laydown.animate .outer-nav a {
 	opacity: 1;
-	filter: alpha(opacity=100);
 	-webkit-transform: translateY(0) translateZ(0);
 	transform: translateY(0) translateZ(0);
 }
 
 .effect-laydown.animate .outer-nav a:nth-child(7){
-	-webkit-transition-delay: 0.0s;
-	        transition-delay: 0.0s;
+	transition-delay: 0.0s;
 }
 
 .effect-laydown.animate .outer-nav a:nth-child(6) {
-	-webkit-transition-delay: 0.04s;
-	        transition-delay: 0.04s;
+	transition-delay: 0.04s;
 }
 
 .effect-laydown.animate .outer-nav a:nth-child(5) {
-	-webkit-transition-delay: 0.08s;
-	        transition-delay: 0.08s;
+	transition-delay: 0.08s;
 }
 
 .effect-laydown.animate .outer-nav a:nth-child(4) {
-	-webkit-transition-delay: 0.12s;
-	        transition-delay: 0.12s;
+	transition-delay: 0.12s;
 }
 
 .effect-laydown.animate .outer-nav a:nth-child(3) {
-	-webkit-transition-delay: 0.16s;
-	        transition-delay: 0.16s;
+	transition-delay: 0.16s;
 }
 
 .effect-laydown.animate .outer-nav a:nth-child(2) {
-	-webkit-transition-delay: 0.2s;
-	        transition-delay: 0.2s;
+	transition-delay: 0.2s;
 }
 
 .effect-laydown.animate .outer-nav a:first-child {
-	-webkit-transition-delay: 0.24s;
-	        transition-delay: 0.24s;
+	transition-delay: 0.24s;
 }
 
 /* Media Queries */

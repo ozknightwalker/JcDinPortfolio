@@ -393,7 +393,7 @@ button {
             transform: translate3d(0px, 10px, 0px);
 }
 
-.menu__handle:before, .menu__handle:after {
+.menu__handle::before, .menu__handle::after {
     content: "";
     position: absolute;
     height: 2px;
@@ -401,13 +401,11 @@ button {
     left: 0px;
     top: 50%;
     -webkit-transform-origin: 50% 50% 0px;
-            -ms-transform-origin: 50% 50% 0px;
-        transform-origin: 50% 50% 0px;
-    -webkit-transition: -webkit-transform 0.25s ease 0s;
-            transition: -webkit-transform 0.25s ease 0s;
+            transform-origin: 50% 50% 0px;
+    transition: -webkit-transform 0.25s ease 0s;
     transition: transform 0.25s ease 0s;
 }
 
-.menu__handle:before, .menu__handle:after, .menu__handle span {
+.menu__handle::before, .menu__handle::after, .menu__handle span {
     background: #5F656F none repeat scroll 0% 0%;
 }
