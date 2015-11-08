@@ -1,8 +1,5 @@
 from django.conf.urls import url
-from .views import MainView, TestView, ProfileView, ExperienceView, PowerView, WorkView, Custom400, Custom500
-
-handler500 = 'Custom500'
-handler400 = 'Custom400'
+from .views import MainView, TestView, ProfileView, ExperienceView, PowerView, WorkView
 
 urlpatterns = [
     url(r'^$', MainView.as_view()),
