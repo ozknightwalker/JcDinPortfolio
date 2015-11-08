@@ -14,7 +14,8 @@
 
 
 .effect-airbnb{
-	transition: all .4s ease;
+	-webkit-transition: all .4s ease;
+	        transition: all .4s ease;
 }
 
 .effect-airbnb.animate{
@@ -41,12 +42,15 @@ body {
 }
 
 .animate-hide {
-  transition: all ease 1.5s;
+  -webkit-transition: all ease 1.5s;
+          transition: all ease 1.5s;
   opacity: 1;
+  filter: alpha(opacity=100);
 }
 
 .animate-hide.ng-hide {
   opacity: 0;
+  filter: alpha(opacity=0);
 }
 
 .fade {
@@ -56,6 +60,7 @@ body {
     right: 0;
     height: 100%;
     opacity: 1;
+    filter: alpha(opacity=100);
 }
 
 .fade.ng-enter,
@@ -65,15 +70,19 @@ body {
 }
 .fade.ng-enter {
     opacity: 0;
+    filter: alpha(opacity=0);
 }
 .fade.ng-enter-active {
     opacity: 1;
+    filter: alpha(opacity=100);
 }
 .fade.ng-leave {
     opacity: 1;
+    filter: alpha(opacity=100);
 }
 .fade.ng-leave-active {
     opacity: 0;
+    filter: alpha(opacity=0);
 }
 
 .preload img{
@@ -81,7 +90,9 @@ body {
 	top: 50%;
     left: 50%;
     margin-right: -50%;
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
 }
 
 svg{
@@ -368,20 +379,21 @@ button {
     left: 0px;
     overflow: hidden;
     text-indent: 200%;
-    transition: opacity 0.25s ease 0s;
+    -webkit-transition: opacity 0.25s ease 0s;
+            transition: opacity 0.25s ease 0s;
 }
 
-.menu__handle::before {
+.menu__handle:before {
     -webkit-transform: translate3d(0px, -10px, 0px);
             transform: translate3d(0px, -10px, 0px);
 }
 
-.menu__handle::after {
+.menu__handle:after {
     -webkit-transform: translate3d(0px, 10px, 0px);
             transform: translate3d(0px, 10px, 0px);
 }
 
-.menu__handle::before, .menu__handle::after {
+.menu__handle:before, .menu__handle:after {
     content: "";
     position: absolute;
     height: 2px;
@@ -389,11 +401,13 @@ button {
     left: 0px;
     top: 50%;
     -webkit-transform-origin: 50% 50% 0px;
-            transform-origin: 50% 50% 0px;
-    transition: -webkit-transform 0.25s ease 0s;
+            -ms-transform-origin: 50% 50% 0px;
+        transform-origin: 50% 50% 0px;
+    -webkit-transition: -webkit-transform 0.25s ease 0s;
+            transition: -webkit-transform 0.25s ease 0s;
     transition: transform 0.25s ease 0s;
 }
 
-.menu__handle::before, .menu__handle::after, .menu__handle span {
+.menu__handle:before, .menu__handle:after, .menu__handle span {
     background: #5F656F none repeat scroll 0% 0%;
 }
