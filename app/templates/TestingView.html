@@ -20,7 +20,7 @@
     </head>
     <body ng-controller="AppCtrl">
         <div class="preload animate-hide" ng-show="loaded">
-            <img src="{% static 'img/loader.gif' %}">
+            <img src="{% static 'img/loader.gif' %}" alt="loading image">
         </div>
         <div id="perspective" class="perspective effect-airbnb animate-hide" ng-show="!loaded">
             <div ng-view class="view-animate container fade" ng-click="ngViewClickEvent()">

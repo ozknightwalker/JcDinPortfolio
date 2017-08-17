@@ -211,7 +211,7 @@
                     classie.add( perspectiveWrapper, 'modalview' );
                     // animate..
                     setTimeout( function () { classie.add( perspectiveWrapper, 'animate' ); }, 25 );
-                });
+                }, { passive: false });
 
                 container.addEventListener( clickevent, function ( ev ) {
                     if( classie.has( perspectiveWrapper, 'animate') ) {
@@ -237,7 +237,7 @@
                             classie.remove( perspectiveWrapper, 'animate' );
                         }, 400);
                     }
-                });
+                }, { passive: false });
                 perspectiveWrapper.addEventListener( clickevent, function ( ev ) {
                     if( classie.has( perspectiveWrapper, 'animate') ) {
                         var onEndTransFn = function ( ev ) {
@@ -262,7 +262,7 @@
                             classie.remove( perspectiveWrapper, 'animate' );
                         }, 400);
                     }
-                });
+                }, { passive: false });
             }
         }]);
 }());
